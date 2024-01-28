@@ -1,4 +1,4 @@
-import { XcodeProject } from '@expo/config-plugins';
+import { XcodeProject } from "@expo/config-plugins";
 
 export function addXCConfigurationList(
   xcodeProject: XcodeProject,
@@ -14,7 +14,7 @@ export function addXCConfigurationList(
     bundleIdentifier: string;
     deploymentTarget: string;
     marketingVersion?: string;
-  }
+  },
 ) {
   const commonBuildSettings: any = {
     /* ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -30,7 +30,7 @@ export function addXCConfigurationList(
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = G76836P2D4;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				
+
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -41,7 +41,7 @@ export function addXCConfigurationList(
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone"; */
 
     PRODUCT_NAME: `"$(TARGET_NAME)"`,
-    SWIFT_VERSION: '5.0',
+    SWIFT_VERSION: "5.0",
     TARGETED_DEVICE_FAMILY: `"1,2"`,
     INFOPLIST_FILE: `${targetName}/Info.plist`,
     CURRENT_PROJECT_VERSION: `"${currentProjectVersion}"`,
@@ -58,15 +58,15 @@ export function addXCConfigurationList(
 
   const buildConfigurationsList = [
     {
-      name: 'Debug',
-      isa: 'XCBuildConfiguration',
+      name: "Debug",
+      isa: "XCBuildConfiguration",
       buildSettings: {
         ...commonBuildSettings,
       },
     },
     {
-      name: 'Release',
-      isa: 'XCBuildConfiguration',
+      name: "Release",
+      isa: "XCBuildConfiguration",
       buildSettings: {
         ...commonBuildSettings,
       },
@@ -75,8 +75,8 @@ export function addXCConfigurationList(
 
   const xCConfigurationList = xcodeProject.addXCConfigurationList(
     buildConfigurationsList,
-    'Release',
-    `Build configuration list for PBXNativeTarget "${targetName}"`
+    "Release",
+    `Build configuration list for PBXNativeTarget "${targetName}"`,
   );
 
   return xCConfigurationList;

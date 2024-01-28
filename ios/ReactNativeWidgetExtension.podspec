@@ -12,11 +12,10 @@ Pod::Spec.new do |s|
   s.homepage       = package['homepage']
   s.platform       = :ios, '13.0'
   s.swift_version  = '5.4'
-  s.source         = { git: 'https://github.com/bndkt/react-native-widget-extension' }
+  s.source         = { git: 'https://github.com/fourbs-group/react-native-widget-extension' }
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
-  s.dependency 'OneSignalXCFramework'
 
   # Swift/Objective-C compatibility
   s.pod_target_xcconfig = {
